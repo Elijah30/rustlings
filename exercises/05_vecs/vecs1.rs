@@ -10,8 +10,8 @@
 // I AM NOT DONE
 
 fn array_and_vec() -> ([i32; 4], Vec<i32>) {
-    let a = [10, 20, 30, 40]; // a plain array
-    let v = // TODO: declare your vector here with the macro for vectors
+    let a = [10, 20, 30, 40]; // Un tableau simple
+    let v = vec![50, 60, 70, 80]; // Déclarer un vecteur avec la macro vec![]
 
     (a, v)
 }
@@ -22,6 +22,14 @@ mod tests {
 
     #[test]
     fn test_array_and_vec_similarity() {
+        let (arr, vec) = array_and_vec();
+        assert_eq!(arr.len(), vec.len());
+        for i in 0..arr.len() {
+            assert_eq!(arr[i], vec[i]);
+        }
+    }
+}
+
         let (a, v) = array_and_vec();
         assert_eq!(a, v[..]);
     }
