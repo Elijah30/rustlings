@@ -15,7 +15,6 @@
 // hint.
 
 // I AM NOT DONE
-
 use std::collections::HashMap;
 
 #[derive(Hash, PartialEq, Eq)]
@@ -37,9 +36,15 @@ fn fruit_basket(basket: &mut HashMap<Fruit, u32>) {
     ];
 
     for fruit in fruit_kinds {
-        // TODO: Insert new fruits if they are not already present in the
-        // basket. Note that you are not allowed to put any type of fruit that's
-        // already present!
+        // Vérifie si la clé fruit existe déjà dans la map
+        match basket.entry(fruit) {
+            // Si la clé n'existe pas, l'insère avec une valeur par défaut (0)
+            std::collections::hash_map::Entry::Vacant(entry) => {
+                entry.insert(0);
+            }
+            // Si la clé existe déjà, ne fait rien
+            std::collections::hash_map::Entry::Occupied(_) => {}
+        }
     }
 }
 
@@ -47,7 +52,7 @@ fn fruit_basket(basket: &mut HashMap<Fruit, u32>) {
 mod tests {
     use super::*;
 
-    // Don't modify this function!
+    // Fonction auxiliaire pour récupérer un panier de fruits prérempli
     fn get_fruit_basket() -> HashMap<Fruit, u32> {
         let mut basket = HashMap::<Fruit, u32>::new();
         basket.insert(Fruit::Apple, 4);
