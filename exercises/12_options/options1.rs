@@ -32,9 +32,8 @@ mod tests {
 
     #[test]
     fn raw_value() {
-        // TODO: Fix this test. How do you get at the value contained in the
-        // Option?
+        // Vous devez extraire la valeur contenue dans l'Option avant de pouvoir la comparer avec un entier
         let icecreams = maybe_icecream(12);
-        assert_eq!(icecreams, 5);
+        assert_eq!(icecreams.unwrap(), 5);
     }
 }
