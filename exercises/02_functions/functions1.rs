@@ -5,6 +5,8 @@
 
 // I AM NOT DONE
 
+const NUMBER: i32 = 3; // Ajout de l'annotation de type
+
 fn main() {
-    call_me();
+    println!("Number {}", NUMBER);
 }
