@@ -19,9 +19,10 @@ fn main() {
         println!("Neither alphabetic nor numeric!");
     }
 
-    let // Finish this line like the example! What's your favorite character?
-    // Try a letter, try a number, try a special character, try a character
-    // from a different language than your own, try an emoji!
+    let your_character = '😊'; // Déclaration de la variable your_character avec un emoji
+    // Essayez un caractère que vous aimez, cela peut être une lettre, un chiffre,
+    // un caractère spécial, un caractère d'une autre langue que la vôtre, ou même un emoji!
+
     if your_character.is_alphabetic() {
         println!("Alphabetical!");
     } else if your_character.is_numeric() {
@@ -30,3 +31,4 @@ fn main() {
         println!("Neither alphabetic nor numeric!");
     }
 }
+
