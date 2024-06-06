@@ -6,8 +6,9 @@
 // I AM NOT DONE
 
 fn main() {
-    let number = "T-H-R-E-E"; // don't change this line
-    println!("Spell a Number : {}", number);
-    number = 3; // don't rename this variable
+    let number_str = "T-H-R-E-E"; // Utiliser une variable distincte pour la chaîne de caractères
+    println!("Spell a Number : {}", number_str);
+
+    let number = 3; // Utiliser une nouvelle variable pour l'entier
     println!("Number plus two is : {}", number + 2);
 }
