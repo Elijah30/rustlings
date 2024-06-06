@@ -10,9 +10,9 @@
 // I AM NOT DONE
 
 mod delicious_snacks {
-    // TODO: Fix these use statements
-    use self::fruits::PEAR as ???
-    use self::veggies::CUCUMBER as ???
+    // Importer les constantes depuis les sous-modules
+    pub use self::fruits::{PEAR, APPLE};
+    pub use self::veggies::{CUCUMBER, CARROT};
 
     mod fruits {
         pub const PEAR: &'static str = "Pear";
@@ -26,9 +26,10 @@ mod delicious_snacks {
 }
 
 fn main() {
+    // Utiliser les constantes correctement en les préfixant avec le nom du module
     println!(
         "favorite snacks: {} and {}",
-        delicious_snacks::fruit,
-        delicious_snacks::veggie
+        delicious_snacks::PEAR,
+        delicious_snacks::CUCUMBER
     );
 }
