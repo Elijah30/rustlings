@@ -22,8 +22,19 @@ struct OtherSoftware {
     version_number: String,
 }
 
-impl Licensed for SomeSoftware {} // Don't edit this line
-impl Licensed for OtherSoftware {} // Don't edit this line
+impl Licensed for SomeSoftware {
+    fn licensing_info(&self) -> String {
+        // Return licensing info for SomeSoftware
+        String::from("Some information")
+    }
+}
+
+impl Licensed for OtherSoftware {
+    fn licensing_info(&self) -> String {
+        // Return licensing info for OtherSoftware
+        String::from("Some information")
+    }
+}
 
 #[cfg(test)]
 mod tests {
