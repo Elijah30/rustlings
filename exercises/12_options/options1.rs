@@ -14,8 +14,6 @@ fn maybe_icecream(time_of_day: u16) -> Option<u16> {
     // time_of_day > 23.
     // TODO: Complete the function body - remember to return an Option!
     ???
-}
-
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -32,9 +30,8 @@ mod tests {
 
     #[test]
     fn raw_value() {
-        // TODO: Fix this test. How do you get at the value contained in the
-        // Option?
-        let icecreams = maybe_icecream(12);
+        // Fix this test to extract the value from the Option
+        let icecreams = maybe_icecream(12).unwrap_or_default(); // Assuming default value is 0
         assert_eq!(icecreams, 5);
     }
 }
