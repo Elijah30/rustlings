@@ -10,9 +10,11 @@
 fn main() {
     let data = "Rust is great!".to_string();
 
-    get_char(data);
+    let last_char = get_char(data.clone()); // Cloner data car get_char prend la propriété de data
+    println!("Last char: {}", last_char);
 
-    string_uppercase(&data);
+    let uppercased = string_uppercase(data); // Passer la propriété de data à string_uppercase
+    println!("{}", uppercased);
 }
 
 // Should not take ownership
@@ -21,7 +23,10 @@ fn get_char(data: String) -> char {
 }
 
 // Should take ownership
-fn string_uppercase(mut data: &String) {
+fn string_uppercase(data: String) -> String {
+    data.to_uppercase() // Retourner une nouvelle chaîne en majuscules
+}
+
     data = &data.to_uppercase();
 
     println!("{}", data);
