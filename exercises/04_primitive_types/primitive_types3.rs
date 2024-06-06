@@ -8,7 +8,7 @@
 // I AM NOT DONE
 
 fn main() {
-    let a = ???
+    let a = vec![1, 2, 3, 4, 5]; // Initialiser un tableau avec quelques éléments
 
     if a.len() >= 100 {
         println!("Wow, that's a big array!");
